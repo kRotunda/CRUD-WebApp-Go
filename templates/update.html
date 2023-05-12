@@ -1,0 +1,13 @@
+{{define "title"}}
+    Update Car
+{{end}}
+{{define "body"}}
+    <h1>Update Car</h1>
+    <form action="/update?id={{.Id}}" method="post">
+        Make: <input type=text name = make value = "{{.Make}}"><br>
+        Model: <input type=text name = model value = "{{.Model}}"><br>
+        Year: <input type=number name = year value = "{{.Year}}"><br>
+        Color: <input type=text name = color value = "{{.Color}}"><br>
+        <input type="submit" value="UPDATE CAR">
+    </form>
+{{end}}

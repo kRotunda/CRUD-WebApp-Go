@@ -1,0 +1,12 @@
+{{define "title"}}
+    Create
+{{end}}
+{{define "body"}}
+    <h1>Create Account</h1>
+    <form action="/create" method="post">
+        Name: <input type=text name = name><br>
+        Username: <input type=text name = username><br>
+        Password: <input type=password name = password><br>
+        <input type="submit" value="Create Account">
+    </form>
+{{end}}

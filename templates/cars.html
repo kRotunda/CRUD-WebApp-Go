@@ -1,0 +1,24 @@
+{{define "title"}}
+    View Cars
+{{end}}
+{{define "body"}}
+    <h1>Your Cars</h1>
+    <table>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+        </tr>
+        {{range $y, $x := .}}
+            <tr>
+                <td>{{$x.Make}}</td>
+                <td>{{$x.Model}}</td>
+                <td>{{$x.Year}}</td>
+                <td>{{$x.Color}}</td>
+                <td><a href="/update?id={{$x.Id}}&make={{$x.Make}}&model={{$x.Model}}&year={{$x.Year}}&color={{$x.Color}}" method="post">UPDATE</a></td>
+                <td><a href="/delete?id={{$x.Id}}" method="post">DELETE</a></td>
+            </tr>
+        {{end}}
+    </table>
+{{end}}

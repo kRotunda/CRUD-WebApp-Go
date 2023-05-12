@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {{block "title" $}}{{end}}
+        </title>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+            td, th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            tr:nth-child(even){background-color: #f2f2f2;}
+
+            tr:hover {background-color: #ddd;}
+
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href = "/">Home</a></li>
+                {{if .}}
+                    <li><a href = "/createCar">Create Car</a></li>
+                    <li><a href = "/cars">View Cars</a></li>
+                    <li><a href = "/logout">Logout</a></li>
+                {{else}}
+                    <li><a href = "/create">New User</a></li>
+                    <li><a href = "/login">Login</a></li>
+                {{end}}
+            </ul>
+        </nav>
+        {{block "body" $}}{{end}}
+    </body>
+</html>
